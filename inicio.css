@@ -1,0 +1,112 @@
+body {
+    font-family: 'Overpass', sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+    color: #1b262c;
+    margin: 0;
+    background-image: url('aerolinea.jpg'); /* Imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen de fondo */
+}
+
+#contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+    width: 100%;
+    padding: 0 20px; /* Agrega un poco de espacio en los bordes */
+}
+
+#central {
+    max-width: 400px; /* Ajusta el tamaño máximo del contenedor central */
+    width: 100%;
+}
+
+.titulo {
+    font-size: 2.5em; /* Tamaño de fuente más grande */
+    color: #bbe1fa;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#login {
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(50, 130, 184, 0.9); /* Fondo semi-transparente para el formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    box-sizing: border-box;
+}
+
+#login input {
+    font-family: 'Overpass', sans-serif;
+    font-size: 1em;
+    color: #1b262c;
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px; /* Espaciado aumentado */
+    padding: 8px; /* Aumento en el espaciado interno */
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    box-sizing: border-box;
+}
+
+#login input::placeholder {
+    font-family: 'Overpass', sans-serif;
+    color: #E4E4E4;
+}
+
+#login button {
+    font-family: 'Overpass', sans-serif;
+    font-size: 1em;
+    color: #1b262c;
+    width: 100%;
+    height: 45px; /* Aumento en la altura del botón */
+    border: none;
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    background-color: #bbe1fa;
+    margin-top: 10px;
+    cursor: pointer; /* Añade un cursor pointer */
+}
+
+#login button:hover {
+    background-color: #0f4c75;
+    color: #bbe1fa;
+}
+
+.pie-form {
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.pie-form a {
+    display: block;
+    text-decoration: none;
+    color: #bbe1fa;
+    margin-bottom: 5px; /* Espaciado ajustado */
+}
+
+.pie-form a:hover {
+    color: #0f4c75;
+}
+
+.inferior {
+    margin-top: 10px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.inferior a {
+    display: block;
+    text-decoration: none;
+    color: #bbe1fa;
+    margin-bottom: 5px; /* Espaciado ajustado */
+}
+
+.inferior a:hover {
+    color: #3282b8;
+}

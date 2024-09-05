@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Aerolínea Internacional</title>
+    <link rel="stylesheet" href="aviones.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <img src="pn1.png" style="width: 30px; height: 30px;">
+           <a class="navbar-brand" href="../aerolinea/avion.html">Aerolinea internacional</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                      <a  class="nav-link" href="../aerolinea/pasajeros.html">Pasajeros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../aerolinea/boletos.html">Boletos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="../aerolinea/destinos.html" >Destinos</a>
+                    </li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="../aerolinea/avion2.html" >Avion</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link" href="../aerolinea/piloto.html" >Piloto</a>
+                    </li>
+                </ul>
+          <a class="nav-link" href="#" id="queriesMenu">Consultas</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="background: url('austria.jpg') no-repeat center center; background-size: cover; width: 100%; height: 100vh;">
+        <div class="form-container">
+            <h1>Registro de Piloto</h1>
+            <form action="guardar_piloto.php" method="POST">
+                <label>Nombre</label>
+                <input type="text" name="npiloto" placeholder="Ingrese el nombre del Piloto" required>
+
+                <label>Apellido</label>
+                <input type="text" name="apiloto" placeholder="Ingrese el apellido del Piloto" required>
+
+                <label>Teléfono</label>
+                <input type="text" name="tpiloto" placeholder="Ingrese el número de teléfono del Piloto" required>
+                   <label>Codigo del Avion</label>
+                <input type="text" name="codigoa" placeholder="Ingrese el Codigo del avion" required>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

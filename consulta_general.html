@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selección de Consulta</title>
+  <style>
+    body {
+      background-color: #f9e79f ; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+
+   #consultation-selection {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      border: 5px solid #CBB887; /* Color de borde tierra */
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      text-align: center;
+      background: linear-gradient(145deg,#fdfefe ,#fdfefe  );
+    }
+     #consultation-selection h2 {
+      color: black; /* Color de texto marrón oscuro */
+      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    select {
+      width: 100%;
+      max-width: 400px;
+      height: 45px;
+      margin: 10px 0;
+      padding: 10px;
+      border: 3px solid #a89f91; /* Color de borde marrón claro */
+      border-radius: 6px;
+      font-size: 16px;
+      background-color:#abebc6  ;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+   select:focus {
+      background-color: #ffffff;
+      outline: none;
+      border-color: #6d4c41; /* Color de borde marrón oscuro en foco */
+    }
+
+    .consultation-container {
+      display: none;
+    }
+
+    .consultation-container.active {
+      display: block;
+    }
+
+    .consultation-container button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
+      color: #ffffff;
+      background-color:#aeb6bf ; /* Color de fondo marrón suave */
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .consultation-container button:hover {
+      background-color: #6d4c41; /* Color de fondo marrón oscuro */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .container {
+      text-align: center;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    input[type="submit"] {
+      padding: 12px 25px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div id="consultation-selection">
+    <h2>Selecciona el Tipo de Consulta</h2>
+    <select id="consulta-type">
+      <option value="general">Consulta General</option>
+      <option value="especifica">Consulta Específica</option>
+    </select>
+
+    <div id="general-consultation-container" class="consultation-container active">
+      <h2>Consulta General</h2>
+      <select id="general-consultation-select">
+        <option value="">Seleccione una consulta general</option>
+        <option value="pasajeros_envio.html">Consulta de Pasajero</option>
+        <option value="destinos_envio.html">Consulta de Destino</option>
+        <option value="consulta_avion_enviar.html">Consulta de Vuelo</option>
+        <option value="consulta_piloto.html">Consulta de Piloto</option>
+        <option value="consulta_boleto.html">Consulta de Boleto</option>
+      </select>
+    </div>
+
+    <div id="specific-consultation-container" class="consultation-container">
+      <h2>Consulta Específica</h2>
+      <select id="specific-consultation-select">
+        <option value="">Seleccione una consulta específica</option>
+        <option value="consulta_especifica.html">Consulta por Código</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="container">
+    <form method="POST" action="avion.html">
+      <input type="submit" name="ok" value="Volver">
+    </form>
+  </div>
+
+  <script>
+    const consultaTypeSelect = document.getElementById('consulta-type');
+    const generalConsultationContainer = document.getElementById('general-consultation-container');
+    const specificConsultationContainer = document.getElementById('specific-consultation-container');
+    const generalConsultationSelect = document.getElementById('general-consultation-select');
+    const specificConsultationSelect = document.getElementById('specific-consultation-select');
+
+    consultaTypeSelect.addEventListener('change', (e) => {
+      const selectedValue = e.target.value;
+
+      if (selectedValue === 'general') {
+        generalConsultationContainer.classList.add('active');
+        specificConsultationContainer.classList.remove('active');
+      } else if (selectedValue === 'especifica') {
+        generalConsultationContainer.classList.remove('active');
+        specificConsultationContainer.classList.add('active');
+      }
+    });
+
+    generalConsultationSelect.addEventListener('change', (e) => {
+      const selectedValue = e.target.value;
+      if (selectedValue) {
+        window.location.href = selectedValue;
+      }
+    });
+
+    specificConsultationSelect.addEventListener('change', (e) => {
+      const selectedValue = e.target.value;
+      if (selectedValue) {
+        window.location.href = selectedValue;
+      }
+    });
+  </script>
+</body>
+</html>
+
